@@ -1,0 +1,42 @@
+---
+title: "时间序列分析"
+author: "邹涛"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+setwd("F:/学习文件集/考研/Statistics/Time-series Analysis")
+```
+
+# 平稳时间序列及其性质
+## 平稳时间序列的定义
+设$\{X_t\}$为一时间序列，$\forall\ m\in N$，对于$t_1,t_2,\cdots,t_m\in T$，$\forall\ \tau\in N$，有$$F_{t_1,t_2,\cdots,t_m}(x_1,x_2,\cdots,x_m)=F_{t_1+\tau,t_2+\tau,\cdots,t_m+\tau}(x_1,x_2,\cdots,x_m)$$，则称序列$\{X_t\}$为**严平稳序列**。
+
+设$\{X_t\}$为一时间序列，满足：
+
+(1) $\forall\ t\in T$，有$E(X_t)=\mu$；
+
+(2) $\forall\ t,s,k\in T$，$E(X_t^2)<\infty$，$\gamma(t,s)=\gamma(k,k+s-t)$。
+
+则称序列$\{X_t\}$为**宽平稳序列**。
+
+由于正态时间序列的参数只与均值向量和协方差矩阵有关，因此正态时间序列的宽平稳和严平稳时等价的。
+
+## 宽平稳序列的性质
+
+(1) 自协方差函数只与步长有关，不受始、末时间节点的影响。
+
+(2) $\forall\ t\in T$，$Var(X_t)=\gamma(0)$。
+
+
